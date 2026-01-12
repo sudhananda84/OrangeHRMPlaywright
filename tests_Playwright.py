@@ -20,6 +20,7 @@ def test_valid_username_invalid_password(page: Page):
     page.fill('input[name="password"]', "wrongpassword")
     page.click('button[type="submit"]')
     expect(page.get_by_text("Invalid credentials")).to_be_visible(timeout=20000)
+    print(page.title())
 
 @pytest.mark.invalidlogin
 def test_invalid_username_invalid_password(page: Page):
